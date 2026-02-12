@@ -1,0 +1,965 @@
+@font-face {
+    font-family: "MagnoliaSky";
+    src: url("magnolia_sky.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: url("bg.jpg") no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: "Times New Roman", serif;
+}
+
+/* Text container */
+.container {
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* Title */
+.title-wrap {
+    position: relative;
+}
+
+.tangled-text {
+    font-size: 56px;
+    color: #feb186;
+}
+
+.valentine-text {
+    font-family: "MagnoliaSky";
+    font-size: 42px;
+    color: #ffffff;
+    margin-top: -18px;
+}
+
+/* Instruction text */
+.instruction {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #4f3b6b;
+}
+
+/* Pearl */
+.pearl {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pearl img {
+    width: 90px;
+    cursor: pointer;
+}
+
+/* Couple */
+.couple {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.couple img {
+    width: 320px;
+}
+/* ---------- SECOND PAGE ---------- */
+
+.second-container {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.letter-text {
+    font-family: "MagnoliaSky";
+    font-size: 32px;
+    color: #ffffff;
+}
+/* glow for "Got a letter" */
+.glow-letter {
+    color: #ffffff;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 200, 220, 0.5),
+        0 0 14px rgba(255, 150, 200, 0.4);
+
+    animation: softGlow 3s infinite alternate;
+}
+
+/* glow for "PRINCESS" */
+.princess-text {
+    font-family: "MagnoliaSky";
+    font-size: 38px;
+    color: #ffb3d9;
+
+    text-shadow:
+        0 0 5px #ffb3d9,
+        0 0 10px #ff7eb3,
+        0 0 20px #ff4d9d,
+        0 0 30px #ff2e93;
+
+    animation: glowPulse 2s infinite alternate;
+}
+
+/* animations */
+@keyframes softGlow {
+    from {
+        text-shadow:
+            0 0 4px rgba(255, 255, 255, 0.6),
+            0 0 8px rgba(255, 200, 220, 0.5),
+            0 0 14px rgba(255, 150, 200, 0.4);
+    }
+    to {
+        text-shadow:
+            0 0 8px rgba(255, 255, 255, 0.9),
+            0 0 14px rgba(255, 190, 230, 0.7),
+            0 0 24px rgba(255, 140, 210, 0.6);
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow:
+            0 0 5px #ffb3d9,
+            0 0 10px #ff7eb3,
+            0 0 20px #ff4d9d,
+            0 0 30px #ff2e93;
+    }
+    to {
+        text-shadow:
+            0 0 10px #ffe1f0,
+            0 0 20px #ff9ecd,
+            0 0 35px #ff6fb1,
+            0 0 50px #ff3d9a;
+    }
+}
+
+.letter-text span {
+    font-size: 36px;
+}
+
+/* basket button */
+
+.basket-btn img {
+    width: 340px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* second page couple */
+.second-couple {
+    bottom: -10px;
+}
+.letter-line {
+    font-family: "MagnoliaSky";
+    font-size: 32px;
+    color: #ffffff;
+}
+
+/* glow for "Got a letter" */
+.glow-letter {
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 200, 220, 0.5),
+        0 0 14px rgba(255, 150, 200, 0.4);
+    animation: softGlow 3s infinite alternate;
+}
+
+/* glow for "PRINCESS" */
+.princess-text {
+    font-family: "MagnoliaSky";
+    font-size: 38px;
+    color: #ffb3d9;
+    text-shadow:
+        0 0 5px #ffb3d9,
+        0 0 10px #ff7eb3,
+        0 0 20px #ff4d9d,
+        0 0 30px #ff2e93;
+    animation: glowPulse 2s infinite alternate;
+}
+
+/* text glow animations */
+@keyframes softGlow {
+    from {
+        text-shadow:
+            0 0 4px rgba(255,255,255,0.6),
+            0 0 8px rgba(255,200,220,0.5);
+    }
+    to {
+        text-shadow:
+            0 0 8px rgba(255,255,255,0.9),
+            0 0 18px rgba(255,180,220,0.8);
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow:
+            0 0 5px #ffb3d9,
+            0 0 15px #ff7eb3;
+    }
+    to {
+        text-shadow:
+            0 0 12px #ffe1f0,
+            0 0 30px #ff6fb1;
+    }
+}
+
+/* 🌸 Petals container */
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* 🌸 Petal */
+.petal {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background: url("petals.png") no-repeat center/contain;
+    opacity: 0.9;
+
+    filter: drop-shadow(0 0 8px rgba(255,170,200,0.8))
+            drop-shadow(0 0 16px rgba(255,120,180,0.6));
+
+    animation:
+        fall linear infinite,
+        glowPetal 3s ease-in-out infinite;
+}
+
+/* falling motion */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* petal glow */
+@keyframes glowPetal {
+    from {
+        filter: drop-shadow(0 0 6px rgba(255,170,200,0.6));
+    }
+    to {
+        filter: drop-shadow(0 0 16px rgba(255,200,220,0.9));
+    }
+}
+.tangled-text {
+    font-size: 56px;
+    color: #feb186;
+
+    text-shadow:
+        0 0 6px #feb186,
+        0 0 14px #feb186,
+        0 0 28px #feb186;
+
+    animation: pureGlowTangled 3s ease-in-out infinite alternate;
+}
+
+@keyframes pureGlowTangled {
+    from {
+        text-shadow:
+            0 0 6px #feb186,
+            0 0 14px #feb186;
+    }
+    to {
+        text-shadow:
+            0 0 14px #feb186,
+            0 0 36px #feb186;
+    }
+}
+.valentine-text {
+    font-family: "MagnoliaSky";
+    font-size: 42px;
+    color: #ffffff;
+    margin-top: -18px;
+
+    text-shadow:
+        0 0 6px #ffffff,
+        0 0 14px #ffffff,
+        0 0 28px #ffffff;
+
+    animation: pureGlowValentine 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes pureGlowValentine {
+    from {
+        text-shadow:
+            0 0 6px #ffffff,
+            0 0 14px #ffffff;
+    }
+    to {
+        text-shadow:
+            0 0 14px #ffffff,
+            0 0 36px #ffffff;
+    }
+}
+/* 🌸 Top flowers decoration */
+.top-flowers {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1.5); /* 🔍 increased size */
+
+    width: 100%;
+    height: 180px;
+
+    background: url("flowers.png") no-repeat top center;
+    background-size: contain;
+
+    opacity: 0.6; /* 🌫️ softer look */
+
+    pointer-events: none;
+    z-index: 998;
+}
+/* 💌 Letter for you text */
+.letter-for-you {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #4f3b6b; /* same as pearl instruction text */
+
+    text-shadow:
+        0 0 4px #4f3b6b,
+        0 0 10px #4f3b6b,
+        0 0 18px #4f3b6b;
+
+    animation: letterGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* glow animation */
+@keyframes letterGlow {
+    from {
+        text-shadow:
+            0 0 4px #4f3b6b,
+            0 0 10px #4f3b6b;
+    }
+    to {
+        text-shadow:
+            0 0 10px #4f3b6b,
+            0 0 24px #4f3b6b;
+    }
+}
+.basket-btn img {
+    width: 340px;
+    cursor: pointer;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 200, 220, 0.6))
+        drop-shadow(0 0 16px rgba(255, 170, 210, 0.5));
+
+    animation: basketGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes basketGlow {
+    from {
+        filter:
+            drop-shadow(0 0 6px rgba(255, 200, 220, 0.5));
+    }
+    to {
+        filter:
+            drop-shadow(0 0 18px rgba(255, 180, 230, 0.9));
+    }
+}
+.basket-area {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+/* ---------- THIRD PAGE ---------- */
+
+/* Title glow */
+.third-title {
+    text-align: center;
+    margin-top: 40px;
+    font-family: "MagnoliaSky";
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff;
+    animation: thirdTitleGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes thirdTitleGlow {
+    from { text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff; }
+    to { text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff; }
+}
+
+/* Side girl image */
+.side-girl {
+    position: absolute;
+    right: 0;      /* changed from left: 0 */
+    bottom: 0;
+    width: 200px;
+    z-index: 3;
+}
+
+/* Mail area */
+.mail-area {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 4;
+}
+
+.mail {
+    width: 240px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+.seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Mail hover animation */
+.mail-area:hover .mail {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Open mail */
+.open-mail {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: none; /* hidden initially */
+    z-index: 5;
+}
+
+.open-mail-img {
+    width: 280px;
+}
+
+.letter-content {
+    font-family: "Times New Roman", serif;
+    color: #4b3621; /* vintage brown */
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 12px;
+    text-align: left;
+}
+/* Open mail container */
+.open-mail {
+    position: absolute;
+    top: 200px;               /* distance from top of screen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;              /* match the width of openmail.png */
+    height: 250px;             /* match the height */
+    z-index: 5;
+}
+
+/* Open mail image */
+.open-mail-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Letter text positioned inside the mail */
+.letter-content {
+    position: absolute;       /* inside the open-mail container */
+    top: 35px;                /* adjust distance from top of mail */
+    left: 25px;               /* distance from left */
+    right: 25px;              /* distance from right */
+    padding-right: 20px;      /* extra space so last word doesn't touch edge */
+    font-family: "Times New Roman", serif;
+    color: #4b3621;           /* vintage brown text */
+    font-size: 15px;          /* adjust as needed */
+    line-height: 1.4;
+    text-align: left;
+    word-wrap: break-word;    /* ensure words wrap inside container */
+}
+
+.mail-area img,
+.open-mail-img {
+    filter: drop-shadow(0 0 8px rgba(255, 200, 220, 0.5))
+            drop-shadow(0 0 16px rgba(255, 170, 210, 0.4));
+    transition: filter 0.5s;
+}
+
+/* intensify glow on hover/open */
+.mail-area:hover img,
+.open-mail-img {
+    filter: drop-shadow(0 0 20px rgba(255, 200, 220, 0.8))
+            drop-shadow(0 0 36px rgba(255, 170, 210, 0.6));
+}
+..side-girl {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 3;
+
+    /* slower, smoother peeking */
+    transform: translateX(50px); /* start slightly off-screen */
+    animation: peek 6s ease-in-out infinite alternate; /* 6s instead of 3s */
+}
+
+@keyframes peek {
+    0% { transform: translateX(50px); }
+    50% { transform: translateX(0); }  /* peeks fully */
+    100% { transform: translateX(50px); }
+}
+..top-flowers {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) scale(1.2); /* initial */
+    width: 100%;
+    height: 180px;
+    background: url("/flowers.png") no-repeat top center;
+    background-size: contain;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 998;
+
+    /* smooth to-and-fro waving */
+    animation: waveFlowers 6s ease-in-out infinite;
+    transform-origin: center bottom; /* pivot from bottom */
+}
+
+/* Smooth to-and-fro sway animation */
+@keyframes waveFlowers {
+    0% { transform: translateX(-50%) rotate(-5deg) scale(1.2); }
+    25% { transform: translateX(-50%) rotate(-2deg) scale(1.2); }
+    50% { transform: translateX(-50%) rotate(0deg) scale(1.2); }
+    75% { transform: translateX(-50%) rotate(2deg) scale(1.2); }
+    100% { transform: translateX(-50%) rotate(5deg) scale(1.2); }
+}
+/* General title style for all pages */
+.title-text, .valentine-text, .third-title {
+    font-family: "MagnoliaSky", cursive;
+    color: #ffffff; /* keep your original color */
+    text-align: center;
+
+    /* Add glowing shadow */
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 200, 220, 0.6),
+        0 0 18px rgba(255, 150, 200, 0.4);
+      
+}
+.title-text {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.3); /* semi-transparent dark background */
+    border-radius: 8px; /* optional rounded corners */
+}
+.next-btn {
+    position: fixed;       /* stays at bottom */
+    bottom: 30px;          /* adjust distance from bottom */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%);
+    z-index: 1000;
+    cursor: pointer;
+    animation: glowPulse 2s infinite alternate; /* glow effect */
+}
+
+.next-btn img {
+    width: 150px;          /* adjust size */
+    height: auto;
+}
+
+/* Glow animation (reuse from your text/petals glow) */
+@keyframes glowPulse {
+    from {
+        filter: drop-shadow(0 0 8px rgba(255, 200, 220, 0.6));
+    }
+    to {
+        filter: drop-shadow(0 0 16px rgba(255, 170, 210, 0.8));
+    }
+}
+/* Next button */
+.next-btn {
+    display: none; /* hidden initially */
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: glowPulse 2s infinite alternate;
+    z-index: 1000;
+}
+
+.next-btn img {
+    width: 150px;
+}
+
+@keyframes glowPulse {
+    from { filter: drop-shadow(0 0 8px rgba(255,200,220,0.6)); }
+    to   { filter: drop-shadow(0 0 16px rgba(255,170,210,0.8)); }
+}
+
+/* Open mail content */
+.open-mail {
+    display: none; /* hidden initially */
+    text-align: center;
+    position: relative;
+}
+
+.letter-content {
+    font-family: "MagnoliaSky", cursive;
+    font-size: 22px;
+    color: #4b2e2b; /* vintage brown text */
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* Glowing title */
+.third-title {
+    font-family: "MagnoliaSky", cursive;
+    font-size: 48px;
+    color: #ffb3d9;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow:
+        0 0 5px #ffb3d9,
+        0 0 10px #ff7eb3,
+        0 0 20px #ff4d9d,
+        0 0 30px #ff2e93;
+    animation: glowPulse 2s infinite alternate;
+}
+/* Container that holds mail + letter */
+.open-mail-container {
+    position: relative;
+    width: 350px;   /* match your openmail.png width */
+    margin: 0 auto;
+}
+
+/* Mail image */
+.open-mail-img {
+    width: 100%;   /* fills the container */
+    height: auto;
+    display: block;
+}
+
+/* Letter text inside mail */
+.letter-content {
+    position: absolute;
+    top: 1%;        /* vertical placement inside mail */
+    left: 14%;       /* horizontal placement inside mail */
+    width: 67%;      /* how wide the text is */
+    text-align: left;
+
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #4b3621;   /* vintage brown text */
+}
+
+.fourth-title {
+    font-family: "MagnoliaSky";
+    font-size: 48px;         /* adjust size for visibility */
+    color: #cda2ff;          /* light purple for contrast */
+    -webkit-text-stroke: .01px white;  /* solid black outline for readability */
+    text-shadow:
+        0 0 10px #cda2ff,
+        0 0 20px #b085ff,
+        0 0 30px #8c56ff;   /* optional glow */
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Buttons container */
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+/* Yes / No buttons */
+.yes-btn, .no-btn {
+    font-family: "MagnoliaSky", cursive;
+    font-size: 28px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(45deg, #b06eff, #8a2be2);
+    box-shadow: 0 0 10px #b06eff, 0 0 20px #8a2be2;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Button hover effect */
+.yes-btn:hover, .no-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #b06eff, 0 0 40px #8a2be2;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    from {
+        text-shadow:
+            0 0 5px #b06eff,
+            0 0 10px #c77aff,
+            0 0 20px #d792ff,
+            0 0 30px #e5a3ff;
+    }
+    to {
+        text-shadow:
+            0 0 10px #c792ff,
+            0 0 20px #d7aaff,
+            0 0 30px #e5c2ff,
+            0 0 40px #f0d6ff;
+    }
+}
+/* Bottom image styling */
+.bottom-section {
+    width: 100%;           /* full width container */
+    text-align: center;    /* center the image */
+    padding: 20px 0;       /* spacing from buttons above */
+    z-index: 10;
+    background: transparent;
+}
+
+.bottom-section .bottom-img {
+    width: auto;           /* keep original width */
+    height: auto;          /* keep original height */
+    max-width: 100%;       /* prevent overflow on small screens */
+    opacity: 1;            /* fully visible */
+}
+/* Fourth page specific background */
+body.fourth-page {
+    background: url("bg4.jpg") no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+/* First page text outlines */
+.tangled-text,
+.valentine-text,
+.instruction {
+    -webkit-text-stroke: 0.5px black;
+    -webkit-text-fill-color: inherit;
+    text-shadow: none; /* plain text, no glow here */
+}
+/* Thin black outline for normal text */
+.letter-text {
+    -webkit-text-stroke: 0.0000001px black; /* thin outline */
+    -webkit-text-fill-color: inherit;  /* keeps original text color */
+    text-shadow: none;                 /* remove extra shadows for outline */
+}
+
+/* Keep glowing effect for Princess */
+.letter-text .princess-text {
+    -webkit-text-stroke: 0.0000001px black; /* no stroke for glowing part */
+    text-shadow:
+        0 0 5px #ffb3d9,
+        0 0 10px #ff7eb3,
+        0 0 20px #ff4d9d,
+        0 0 30px #ff2e93; /* glow effect */
+}
+/* "Open it!!" title */
+.third-title {
+    -webkit-text-stroke: 0.000001px black; /* almost invisible outline */
+    -webkit-text-fill-color: inherit;    /* keeps your text color */
+    text-shadow:
+        0 0 8px #cda2ff,
+        0 0 15px #b085ff,
+        0 0 25px #8c56ff;                /* glow effect */
+    text-align: center;
+    font-size: 48px;                     /* adjust if needed */
+}
+/* Fifth page title */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Times New Roman", serif;
+    background: url("bg.jpg") no-repeat center/cover; /* same background as 4th page */
+    overflow: hidden;
+}
+
+/* Title */
+.fifth-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    color: #ff3d3d;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0 0 5px #ff3d3d, 0 0 10px #ff6b6b;
+}
+
+/* Donkey at bottom */
+.donkey-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.donkey-img {
+    width: 300px;
+}
+
+/* Container for falling emojis */
+.angry-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Each falling emoji */
+.angry-emoji {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url("angry-emoji.png") no-repeat center/contain;
+    opacity: 0.9;
+}
+/* Go Back Button */
+.back-btn {
+    position: absolute;
+    bottom: 20px;      /* distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1000;     /* above everything else */
+}
+
+.back-btn img {
+    width: 150px;      /* adjust size */
+    height: auto;
+}
+.white-outline {
+    text-shadow:
+        -0.5px -0.5px 0 white,
+         0.5px -0.5px 0 white,
+        -0.5px  0.5px 0 white,
+         0.5px  0.5px 0 white;
+}
+/* YES PAGE TITLE */
+.yes-title {
+    margin-top: 120px;           /* NOT at top most */
+    text-align: center;
+    font-size: 42px;
+    font-family: "Times New Roman", serif;
+    color: white;
+
+    /* white outline */
+    -webkit-text-stroke: 0.5px white;
+    -webkit-text-fill-color: white;
+
+    /* skin-tone glow (Tangled style) */
+    text-shadow:
+        0 0 6px #ffd2b0,
+        0 0 12px #ffbfa0,
+        0 0 22px #ffae8a;
+}
+
+/* Flowers layout */
+.yes-flowers {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.yes-flowers img {
+    width: 140px;
+    height: auto;
+}
+.yes-title {
+    margin-top: 120px;
+    text-align: center;
+    font-size: 42px;
+
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+
+    color: white;
+    -webkit-text-stroke: 0.5px white;
+    -webkit-text-fill-color: white;
+
+    text-shadow:
+        0 0 6px #ffd2b0,
+        0 0 12px #ffbfa0,
+        0 0 22px #ffae8a;
+}
+/* Center flower */
+.flower-center {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    z-index: 3;
+}
+
+/* Bottom flower container */
+.flower-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 3;
+}
+
+/* Bottom left */
+.flower-left {
+    width: 140px;
+}
+
+/* Bottom right */
+.flower-right {
+    width: 140px;
+}
+/* Gift page background */
+.gift-page {
+    background: url("giftbg.png") no-repeat center center/cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Left middle gift */
+.gift-left {
+    position: absolute;
+    left: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 200px;
+}
+
+/* Right bottom gift (not bottom-most) */
+.gift-right {
+    position: absolute;
+    right: 15px;
+    bottom: 50px;
+    width: 200px;
+}

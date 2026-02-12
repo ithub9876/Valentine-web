@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Your Mail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top flowers -->
+    <div class="top-flowers"></div>
+
+    <!-- Petals container -->
+    <div class="petals-container"></div>
+
+    <!-- Glowing title -->
+    <h1 class="third-title">Open it!!</h1>
+
+    <!-- Side girl image (Rapunzel peeking) -->
+    <img src="sidegirl.png" alt="Side Girl" class="side-girl">
+
+    <!-- Mail area (clickable) -->
+    <div class="mail-area" onclick="openMail()">
+        <img id="mail" src="mail.png" alt="Mail" class="mail">
+        <img id="seal" src="seal.png" alt="Seal" class="seal">
+    </div>
+
+    <!-- Open mail revealed letter (hidden initially) -->
+   
+   <!-- Open mail with letter inside (hidden initially) -->
+<div class="open-mail" style="display: none;">
+    <div class="open-mail-container">
+        <img src="openmail.png" alt="Open Mail" class="open-mail-img">
+
+        <div class="letter-content">
+            Hey Princess 💖,<br>
+            I just wanted to tell you how special you are to me…<br>
+            Every moment with you is magical ✨<br>
+            Can’t wait to see you! 
+        </div>
+    </div>
+</div>
+
+    <!-- Next button (hidden initially) -->
+    <div class="next-btn" onclick="goNextPage()" style="display: none;">
+        <img src="next-button.png" alt="Next Button">
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
